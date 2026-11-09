@@ -1,0 +1,5 @@
+item,value
+One-year sigma (SD of CDR / R0),0.09847884321078733
+Simulated 99.5% reserve risk / R0,0.28444314790999914
+Standard formula approximation 3 x sigma,0.295436529632362
+Lognormal rho(sigma),0.281751120219923
