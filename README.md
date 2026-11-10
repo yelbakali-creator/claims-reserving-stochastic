@@ -1,5 +1,7 @@
 # Stochastic Claims Reserving: Chain-Ladder, Mack, ODP Bootstrap and One-Year Solvency II Risk
 
+[![tests](https://github.com/yelbakali-creator/claims-reserving-stochastic/actions/workflows/tests.yml/badge.svg)](https://github.com/yelbakali-creator/claims-reserving-stochastic/actions/workflows/tests.yml)
+
 A from-scratch Python implementation of the core reserving toolkit used in non-life insurance and reinsurance, applied to the classic Taylor & Ashe (1983) triangle:
 
 1. **Chain-ladder** best estimate of outstanding claims.
@@ -94,6 +96,7 @@ Residuals show no trend by origin or development period. The calendar-period pan
 
 ```bash
 pip install -r requirements.txt
+python -m pytest       # 4 automated validation tests
 python run_study.py
 ```
 
