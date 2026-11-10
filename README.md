@@ -50,10 +50,12 @@ An early version of the bootstrap projected future claims from the actual latest
 |---|---|
 | One-year sigma (SD of CDR / reserve) | 9.85% |
 | Simulated 99.5% reserve risk / reserve | 28.4% |
-| Standard formula approximation, 3 x sigma | 29.5% |
+| 3 x sigma multiplier (standard formula form, with the estimated sigma) | 29.5% |
 | Lognormal rho(sigma) | 28.2% |
 
-The simulated 1-in-200 reserve risk, measured in excess of the expected CDR, is close to both the standard formula's 3 x sigma approximation and the lognormal quantile function rho(sigma), so for this triangle the lognormal assumption behind the standard formula is reasonable.
+The Solvency II standard formula sets premium and reserve risk capital at 3 x sigma x volume (Article 115 of Delegated Regulation 2015/35), where sigma is prescribed by line of business. Here, sigma is instead **estimated from this triangle**, in the spirit of an undertaking-specific parameter. The comparison therefore tests whether the 3 x sigma multiplier is a good approximation of the simulated 1-in-200 loss; it is not the standard-formula capital of a real portfolio.
+
+The simulated 1-in-200 reserve risk, measured in excess of the expected CDR, is close to both 3 x sigma and the lognormal quantile function rho(sigma). For this triangle, the 3 x sigma multiplier is a reasonable approximation.
 
 ## Method notes
 
@@ -99,7 +101,7 @@ The `chainladder` library is used only to load the public triangle and to cross-
 
 ## Limitations and next steps
 
-- Analytic one-year standard error (Merz & Wüthrich, 2008) to cross-check the simulation.
+- Analytic one-year standard error (Merz & Wüthrich, 2008) to cross-check the simulation: the one-year result is not yet validated against an independent reference.
 - Tail factor beyond development period 10, and paid versus incurred comparison (Munich chain-ladder).
 - Calendar-year effects: a model with an explicit inflation parameter.
 - Several lines of business with dependence (copulas) and diversification of reserve risk.
